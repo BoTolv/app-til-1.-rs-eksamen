@@ -6,7 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
-   <title>jQuery demo</title>
+    <script type="text/javascript" src="cordova.js"></script> <------- kalder cordovas javascript --!>
+    <script type="text/javascript" src="js/index.js"></script>
+	<title>jQuery demo</title>
  </head>
  <body>
 <h2>Using the XMLHttpRequest object To Retrieve JSON Frame<BR>
@@ -21,19 +23,6 @@ The Chart is readings from Multiple Channels into 1 Visualisation on Thingspeak.
 <p><a href="https://thingspeak.com/channels/786918">ESP8266-12 Channel</a></p>
 <p><a href="https://freeboard.io/board/PLCLH6">Freeboard.io Dashboard</a></p>
 <p><a href="http://www.esp8266.com">ESP8266 Support Forum</a></p>
-<script>
-function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("ESP8266").innerHTML =
-      xhttp.responseText;
-    }
-  };
-  xhttp.open("GET", "http://api.thingspeak.com/channels/786918/fields/field1/last?key=CSU7B02VN40FJK8G", true);
-  xhttp.send();
-}
-</script>
 <iframe width="500" height="380" style="border: 1px solid #cccccc;" 
 
 src="https://thingspeak.com/channels/786918/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" ></iframe>
