@@ -17,8 +17,8 @@
                 url: url,
                 type: 'GET',
                 contentType: "application/json",
-                //dataType: "json",
-                //crossDomain: true,
+                dataType: "json",
+                crossDomain: true,
                 success: function (data, textStatus, xhr) {
                     $.each(data, function (i, item) {
                         if (i == 'feeds') {
